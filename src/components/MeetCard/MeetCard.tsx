@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import {
   CardContent,
@@ -18,7 +19,7 @@ const MeetCard: React.FC<MeetCardProps> = ({ img, name, desc }) => {
     <CardWrapper>
       <CardContent>
         <CardImg>
-          <img src={img.src} alt="cardimg" />
+          <Image src={img} alt="cardimg" width={117} height={117} />
         </CardImg>
         <CardTitle>{name}</CardTitle>
         <CardDesc>{desc}</CardDesc>

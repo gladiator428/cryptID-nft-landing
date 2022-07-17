@@ -5,9 +5,18 @@ import { Container, MeetCard } from "components";
 import { MeetSectionWrapper, MeetTitle } from "./MeetTeamSection.styles";
 import { Polygon1, Polygon2 } from "../PolygonSection/PolygonSection.styles";
 
-import meetImg from "assets/images/meet.png";
 import polygonImg from "assets/images/polygon.png";
 import { Autoplay } from "swiper";
+
+// User Images
+import ML from "assets/images/MaxLingenfelter.png";
+import SO from "assets/images/ShawnaOlachea.png";
+import JC from "assets/images/JenniferCooper.png";
+import LN from "assets/images/LindsayNielson.png";
+import MR from "assets/images/McKenzieVanDorne-Rice.png";
+import TC from "assets/images/ToddCooper.png";
+import ZT from "assets/images/ZachThomson.png";
+
 const MeetTeamSection: React.FC = () => {
   const [poly1, setPoly1] = useState("");
   const [poly2, setPoly2] = useState("");
@@ -57,17 +66,19 @@ const MeetTeamSection: React.FC = () => {
         transform={poly2}
       />
       <Container>
-        <MeetTitle className="gradient-font">Meet The Team</MeetTitle>
+        <MeetTitle id="team" className="gradient-font">
+          Meet The Team
+        </MeetTitle>
         <Swiper
           slidesPerView={1}
           spaceBetween={30}
           slidesPerGroup={1}
           loop={true}
           modules={[Autoplay]}
-          loopFillGroupWithBlank={true}
+          loopFillGroupWithBlank={false}
           className="mySwiper"
           autoplay={{
-            delay: 2000,
+            delay: 10000,
             disableOnInteraction: false,
           }}
           breakpoints={{
@@ -88,15 +99,58 @@ const MeetTeamSection: React.FC = () => {
             },
           }}
         >
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item: number) => (
-            <SwiperSlide key={item}>
-              <MeetCard
-                img={meetImg}
-                name="Max"
-                desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              />
-            </SwiperSlide>
-          ))}
+          {/* Start Of Staff Cards */}
+          <SwiperSlide>
+            <MeetCard
+              img={ML.src}
+              name="Max"
+              desc="Max Lingenfelter is a young discord developer, web developer, and entrepreneur. A lover of people and all things tech-related, he loves adventures and experiencing new things."
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <MeetCard
+              img={SO.src}
+              name="Shawna"
+              desc="Shawna Olachea currently works at Liquid Studios Entertainment as a Film/Television Talent Manager. She is a brand specialist and Content Producer."
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <MeetCard
+              img={JC.src}
+              name="Jennifer"
+              desc="Jennifer Cooper is a founding member of the Supernatural University Team and has worked in the entertainment industry since 2006. Her roles have included acting, screenwriting and various other positions in film production."
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <MeetCard
+              img={LN.src}
+              name="Lindsay"
+              desc="Lindsay Nielson, Viceroy of The Supernatural University, she is an entertainer and storyteller by nature. She is an amazing writer, actress and content creator."
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <MeetCard
+              img={MR.src}
+              name="McKenzie"
+              desc="McKenzie Van Dorne-Rice is an Award-winning Female Film Producer and President of Liquid Studios Entertainment. She has worked in the entertainment industry for 15+ years. She is a talent manager and co-creator of The Supernatural University Transmedia Universe."
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <MeetCard
+              img={TC.src}
+              name="Todd"
+              desc="Todd Cooper is an author who has also worked off and on in the film industry for 8 years. He is part of the social media team for The Supernatural Universe Transmedia Universe."
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <MeetCard
+              img={ZT.src}
+              name="Zach"
+              desc="Zach Thomson is an Award-winning Film Director and Producer. He has worked in the entertainment industry for 25+ years. He is the creator of The Supernatural University Transmedia Universe. "
+            />
+          </SwiperSlide>
+
+          {/* End Of Staff Cards */}
         </Swiper>
       </Container>
     </MeetSectionWrapper>

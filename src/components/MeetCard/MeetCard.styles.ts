@@ -30,6 +30,11 @@ export const CardContent = styled.div`
 export const CardImg = styled.div`
   max-width: 117px;
   width: 90%;
+  position: relative;
+
+  img {
+    border-radius: 15px;
+  }
 `;
 
 export const CardTitle = styled.h3`
